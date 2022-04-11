@@ -1,9 +1,69 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>ibiblioteca</ion-title>
+  <ion-toolbar color="primary">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <span>
+            <ion-icon name="arrow-back" [routerLink]="['/']"></ion-icon>
+          </span>
+        </ion-col>
+        <ion-col col-6>
+          <div class="title">iBiblioteca</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid class="gridSearchBar" style="display: none;">
+      <ion-row>
+        <ion-col col-12>
+          <ion-searchbar (keyup.enter)='onChangeTime($event.target.value)' placeholder="Press enter to search">
+          </ion-searchbar>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-toolbar>
 </ion-header>
 
+<!-- Default Refresher -->
 <ion-content>
 
+  <ion-refresher slot="fixed" pullFactor="0.5" pullMin="100" pullMax="200" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
+      refreshingText="Refreshing..."></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-item *ngIf="error === 1;else noHayErrores" style="text-align: center;">
+    <h3>Error 500</h3><br />
+    <p>Desplace hacia abajo para recargar</p>
+  </ion-item>
+
+  <ng-template #noHayErrores>
+    <ion-list *ngIf="arrayBiblio?.length !== 0;else noHayLibros" id="principal">
+      <!-- ['libro/',items.id] -->
+      <ion-item *ngFor="let items of arrayBiblio" routerLink="/libro" [state]="{id:items.id}">
+        <ion-thumbnail slot="start">
+          <ion-img src="../../assets/img/{{items.titulo}}.jpg"></ion-img>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>{{items.titulo}}</h3>
+          <p>Autor: {{items.autor}}</p>
+          <p>Año: {{items.anno}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list id="secundario">
+
+    </ion-list>
+    <ng-template #noHayLibros>
+      <h3>No hay libros.</h3>
+      <p>Desplace hacia abajo para recargar</p>
+    </ng-template>
+  </ng-template>
+
+
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button color="light">
+      <ion-icon name="search"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

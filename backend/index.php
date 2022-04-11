@@ -17,6 +17,10 @@ if ($method == "OPTIONS") {
     die();
 }
 
+$app->get("/", function () use($app,$db) {
+    echo "Todo está ok";
+});
+
 $app->get("/libros", function () use($app,$db) {
     
     $query = 'SELECT * FROM libros ORDER BY id ASC';

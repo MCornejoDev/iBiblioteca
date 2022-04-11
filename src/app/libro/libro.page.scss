@@ -1,0 +1,24 @@
+ion-icon {
+    font-size: 25px;
+    padding-left: 10px;
+    outline: none;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+//Centrar img y le das un tamaño en altura únicamente.
+img {
+    height: 50vh;
+    width: auto;
+    margin: auto;
+    display: block;
+    border: solid 5px;
+}
+
+div.info {
+    text-align: left;
+    margin-top: 15px;
+    margin-inline-start: 25px;
+}
