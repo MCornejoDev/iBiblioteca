@@ -4,7 +4,7 @@
       <ion-row>
         <ion-col col-6>
           <span>
-            <ion-icon name="arrow-back" [routerLink]="['/']"></ion-icon>
+            <ion-icon name="arrow-back" routerLink="/"></ion-icon>
           </span>
         </ion-col>
         <ion-col col-6>
@@ -39,7 +39,6 @@
 
   <ng-template #noHayErrores>
     <ion-list *ngIf="arrayBiblio?.length !== 0;else noHayLibros" id="principal">
-      <!-- ['libro/',items.id] -->
       <ion-item *ngFor="let items of arrayBiblio" routerLink="/libro" [state]="{id:items.id}">
         <ion-thumbnail slot="start">
           <ion-img src="../../assets/img/{{items.titulo}}.jpg"></ion-img>
