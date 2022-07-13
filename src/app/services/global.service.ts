@@ -6,7 +6,6 @@ import { Injectable } from '@angular/core';
 })
 export class GlobalService {
   // public api: string = "http://libraryv6.test/backend/index.php";
-  public api: string = "https://cornejo.ml/library/index.php";
   private headerColor = "antiquewhite";
 
   constructor(public _http: HttpClient) { }
