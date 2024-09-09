@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { GlobalService } from '../services/global.service';
 
@@ -26,7 +25,7 @@ export class IbibliotecaPage implements OnInit {
 
   arrayBiblio = [];
   public error: Number;
-  private url:string;
+  private url: string;
 
   constructor(
     private _globalS: GlobalService,

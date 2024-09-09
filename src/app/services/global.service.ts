@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class GlobalService {
-  // public api: string = "http://libraryv6.test/backend/index.php";
+  public api: string = "http://libraryv6.test/backend/index.php";
   private headerColor = "antiquewhite";
 
   constructor(public _http: HttpClient) { }
@@ -21,7 +21,7 @@ export class GlobalService {
     //   }
     // });
     urlRequest = _params.join("/");
-    
+
     return urlRequest;
   }
 }

@@ -29,7 +29,7 @@
     "@capacitor/ios": "3.4.3",
     "@capacitor/keyboard": "1.2.2",
     "@capacitor/status-bar": "1.0.8",
-    "@ionic/angular": "^7.8.6",
+    "@ionic/angular": "^8.3.0",
     "cordova-plugin-splashscreen": "^6.0.1",
     "cordova-plugin-statusbar": "^3.0.0",
     "rxjs": "^7.5.0",
