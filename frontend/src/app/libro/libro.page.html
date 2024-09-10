@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <span>
+      <ion-icon name="arrow-back" routerLink="/ibiblioteca"></ion-icon>
+    </span>
+    <ion-title>{{book.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen ion-padding>
+  <div class="ion-padding">
+    <div>
+      <img src="../../assets/img/{{book.title}}.jpg" alt="{{book.title}}">
+    </div>
+    <div class="info">
+      <p><strong>Autor</strong>: <span>{{book.author}}</span></p>
+      <p><strong>Año</strong>: <span>{{book.anno}}</span></p>
+      <p><strong>Editorial</strong>: <span>{{book.publisher}}</span></p>
+      <p><strong>Sinopsis</strong>: <span>{{book.synopsis}}</span></p>
+    </div>
+  </div>
+</ion-content>

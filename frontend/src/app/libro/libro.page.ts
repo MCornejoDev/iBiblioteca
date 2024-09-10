@@ -25,18 +25,19 @@ export class LibroPage implements OnInit {
   ngOnInit() {
     this.getValue = this._router.getCurrentNavigation().extras.state.id;
 
-    this.get('libro', [this.getValue]);
+    this.get('book', [this.getValue]);
+    console.log(this);
   }
 
   get(urlParam: string, params: Array<any>) {
-    
+
     if (params.length === 0) {
       this.url = urlParam;
     }
     else {
       this.url = urlParam + '/' + this._globalS.makeRequest(params);
     }
-    
+
     this._http.get(this._globalS.api + "/" + this.url)
       .toPromise()
       .then((response) => {

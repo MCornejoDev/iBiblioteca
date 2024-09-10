@@ -1,0 +1,26 @@
+# Vendor directory
+/vendor
+
+# PHPStorm or other IDE settings
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment variables file
+.env
+
+# PHPUnit
+phpunit.xml
+phpunit.xml.dist
+
+# Composer cache
+composer/cache/
+
+# System files
+*.swp
+*.swo

@@ -35,7 +35,7 @@ export class IbibliotecaPage implements OnInit {
   }
 
   ngOnInit() {
-    this.get("libros", []);
+    this.get("books", []);
 
     // $(document).ready(function () {
     //   $("ion-fab-button").click(function () {
@@ -63,7 +63,7 @@ export class IbibliotecaPage implements OnInit {
 
   doRefresh(event) {
     setTimeout(() => {
-      this.get("libros", []);
+      this.get("books", []);
       if (this.error === 1) {
         console.log("Error al recargar");
       }
