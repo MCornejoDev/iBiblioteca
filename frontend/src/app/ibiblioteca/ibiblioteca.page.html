@@ -41,12 +41,12 @@
     <ion-list *ngIf="arrayBiblio?.length !== 0;else noHayLibros" id="principal">
       <ion-item *ngFor="let items of arrayBiblio" routerLink="/libro" [state]="{id:items.id}">
         <ion-thumbnail slot="start">
-          <ion-img src="../../assets/img/{{items.title}}.jpg"></ion-img>
+          <ion-img [src]="  getImageSrc(items.title)" alt="{{items.title}}"></ion-img>
         </ion-thumbnail>
         <ion-label>
           <h3>{{items.title}}</h3>
-          <p>Autor: {{items.author}}</p>
-          <p>Año: {{items.anno}}</p>
+          <p>Author: {{items.author}}</p>
+          <p>Year: {{items.year}}</p>
         </ion-label>
       </ion-item>
     </ion-list>

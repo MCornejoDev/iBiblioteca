@@ -10,13 +10,13 @@
 <ion-content fullscreen ion-padding>
   <div class="ion-padding">
     <div>
-      <img src="../../assets/img/{{book.title}}.jpg" alt="{{book.title}}">
+      <img [src]="imageSrc" alt="{{book.title}}">
     </div>
     <div class="info">
-      <p><strong>Autor</strong>: <span>{{book.author}}</span></p>
-      <p><strong>Año</strong>: <span>{{book.anno}}</span></p>
-      <p><strong>Editorial</strong>: <span>{{book.publisher}}</span></p>
-      <p><strong>Sinopsis</strong>: <span>{{book.synopsis}}</span></p>
+      <p><strong>Author</strong>: <span>{{book.author}}</span></p>
+      <p><strong>Year</strong>: <span>{{book.year}}</span></p>
+      <p><strong>Publisher</strong>: <span>{{book.publisher}}</span></p>
+      <p><strong>Synopsis</strong>: <span>{{book.synopsis}}</span></p>
     </div>
   </div>
 </ion-content>
